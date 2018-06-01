@@ -59,7 +59,7 @@ testAllowedTypes <- function(x){
                     "uint16", "int16", "uint32", "int32", "uint64", "int64", "integer", 
                     "logical", "bool", "boolean",
                     "character", "string", "factor", "ordered")
-  all(sapply(x, function(x)x %in% allowedTypes))
+  all(sapply(x, function(x) data.class(x) %in% allowedTypes))
 }
 
 
