@@ -32,7 +32,7 @@
 convertArgsToAMLschema <- function(argList) {
   form <- list()
   for (arg in names(argList)) {
-    type <- argList[[arg]]
+    type <- data.class(argList[[arg]])
     
     form[[ arg ]] <- if (type %in% c("numeric", "double")) {
       list("type"="number", "format"="double")
